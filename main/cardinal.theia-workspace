@@ -1,0 +1,25 @@
+{
+  "folders": [
+    {
+      "path": "file:///d%3A/CARDINAL%20LED-TEST%20FIXTURE%20v2"
+    },
+    {
+      "path": "file:///c%3A/Users/Gowtham%20CS/Downloads/MSPM0G_Library/MSPM0G_Library"
+    }
+  ],
+"settings": {},
+"launch": {
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "main",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "main",
+                "resourceId": "/main"
+            }
+        }
+    ]
+}
+}
