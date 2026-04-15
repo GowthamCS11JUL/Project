@@ -16,8 +16,9 @@ ORDERED_OBJS += \
 "./delay_timer.o" \
 "./ti_msp_dl_config.o" \
 "./startup_mspm0g350x_ticlang.o" \
-"./i2c.o" \
+"./i2c_common.o" \
 "./main.o" \
+"./spi.o" \
 "./usb.o" \
 $(GEN_CMDS__FLAG) \
 -Wl,-ldevice.cmd.genlibs \
@@ -153,8 +154,8 @@ main.out: $(OBJS) $(GEN_CMDS) C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "adc_mux.o" "app.o" "control.o" "delay_timer.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "i2c.o" "main.o" "usb.o" 
-	-$(RM) "adc_mux.d" "app.d" "control.d" "delay_timer.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "i2c.d" "main.d" "usb.d" 
+	-$(RM) "adc_mux.o" "app.o" "control.o" "delay_timer.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "i2c_common.o" "main.o" "spi.o" "usb.o" 
+	-$(RM) "adc_mux.d" "app.d" "control.d" "delay_timer.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "i2c_common.d" "main.d" "spi.d" "usb.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

@@ -160,6 +160,12 @@ extern "C" {
 /* Defines for SWITCH_EN: GPIOA.4 with pinCMx 9 on package pin 44 */
 #define SWITCH_SWITCH_EN_PIN                                     (DL_GPIO_PIN_4)
 #define SWITCH_SWITCH_EN_IOMUX                                    (IOMUX_PINCM9)
+/* Port definition for Pin Group Chip_select */
+#define Chip_select_PORT                                                 (GPIOB)
+
+/* Defines for Chip_select_bar_En: GPIOB.16 with pinCMx 33 on package pin 4 */
+#define Chip_select_Chip_select_bar_En_PIN                      (DL_GPIO_PIN_16)
+#define Chip_select_Chip_select_bar_En_IOMUX                     (IOMUX_PINCM33)
 /* Port definition for Pin Group ADC_MUX_EN */
 #define ADC_MUX_EN_PORT                                                  (GPIOA)
 

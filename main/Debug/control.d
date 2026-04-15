@@ -81,7 +81,7 @@ control.o: ../control.c ../control.h ../headers.h \
  ../usb.h ../delay_timer.h \
  C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/I2C_Controller.h \
  C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/SPI_Interface.h \
- ../adc_mux.h ../variables.h
+ ../variables.h ../adc_mux.h
 ../control.h:
 ../headers.h:
 ti_msp_dl_config.h:
@@ -165,5 +165,5 @@ C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/Timer_Profi
 ../delay_timer.h:
 C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/I2C_Controller.h:
 C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/SPI_Interface.h:
-../adc_mux.h:
 ../variables.h:
+../adc_mux.h:

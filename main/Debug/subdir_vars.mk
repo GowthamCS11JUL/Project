@@ -15,8 +15,9 @@ C_SRCS += \
 ../delay_timer.c \
 ./ti_msp_dl_config.c \
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c \
-../i2c.c \
+../i2c_common.c \
 ../main.c \
+../spi.c \
 ../usb.c 
 
 GEN_CMDS += \
@@ -34,8 +35,9 @@ C_DEPS += \
 ./delay_timer.d \
 ./ti_msp_dl_config.d \
 ./startup_mspm0g350x_ticlang.d \
-./i2c.d \
+./i2c_common.d \
 ./main.d \
+./spi.d \
 ./usb.d 
 
 GEN_OPTS += \
@@ -48,8 +50,9 @@ OBJS += \
 ./delay_timer.o \
 ./ti_msp_dl_config.o \
 ./startup_mspm0g350x_ticlang.o \
-./i2c.o \
+./i2c_common.o \
 ./main.o \
+./spi.o \
 ./usb.o 
 
 GEN_MISC_FILES += \
@@ -64,8 +67,9 @@ OBJS__QUOTED += \
 "delay_timer.o" \
 "ti_msp_dl_config.o" \
 "startup_mspm0g350x_ticlang.o" \
-"i2c.o" \
+"i2c_common.o" \
 "main.o" \
+"spi.o" \
 "usb.o" 
 
 GEN_MISC_FILES__QUOTED += \
@@ -80,8 +84,9 @@ C_DEPS__QUOTED += \
 "delay_timer.d" \
 "ti_msp_dl_config.d" \
 "startup_mspm0g350x_ticlang.d" \
-"i2c.d" \
+"i2c_common.d" \
 "main.d" \
+"spi.d" \
 "usb.d" 
 
 GEN_FILES__QUOTED += \
@@ -96,8 +101,9 @@ C_SRCS__QUOTED += \
 "../delay_timer.c" \
 "./ti_msp_dl_config.c" \
 "C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c" \
-"../i2c.c" \
+"../i2c_common.c" \
 "../main.c" \
+"../spi.c" \
 "../usb.c" 
 
 SYSCFG_SRCS__QUOTED += \

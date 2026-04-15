@@ -14,9 +14,9 @@
 #include "delay_timer.h"
 #include "I2C_Controller.h"
 #include "SPI_Interface.h"
+#include "variables.h"
 #include "adc_mux.h"
 #include "control.h"
-#include "variables.h"
 
 
 

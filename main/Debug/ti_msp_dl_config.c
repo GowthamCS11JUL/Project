@@ -141,6 +141,8 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
 
     DL_GPIO_initDigitalOutput(SWITCH_SWITCH_EN_IOMUX);
 
+    DL_GPIO_initDigitalOutput(Chip_select_Chip_select_bar_En_IOMUX);
+
     DL_GPIO_initDigitalOutput(ADC_MUX_EN_ADC_MUX_EN_BAR_0_IOMUX);
 
     DL_GPIO_initDigitalOutput(ADC_MUX_EN_ADC_MUX_EN_BAR_1_IOMUX);
@@ -179,7 +181,9 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
 		ADC_MUX_1_ADC_MUX_1_S0_PIN |
 		ADC_MUX_1_ADC_MUX_1_S1_PIN |
 		ADC_MUX_1_ADC_MUX_1_S2_PIN);
-    DL_GPIO_enableOutput(GPIOB, ADC_MUX_0_ADC_MUX_0_S1_PIN |
+    DL_GPIO_setPins(GPIOB, Chip_select_Chip_select_bar_En_PIN);
+    DL_GPIO_enableOutput(GPIOB, Chip_select_Chip_select_bar_En_PIN |
+		ADC_MUX_0_ADC_MUX_0_S1_PIN |
 		ADC_MUX_0_ADC_MUX_0_S2_PIN |
 		ADC_MUX_0_ADC_MUX_0_S3_PIN |
 		ADC_MUX_1_ADC_MUX_1_S0_PIN |
