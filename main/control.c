@@ -2,7 +2,7 @@
 #include "headers.h"
 #include "ti/driverlib/dl_gpio.h"
 
-void contorl_init(void) {
+void control_init(void) {
   DL_GPIO_initDigitalOutput(RELAY_RELAY_EN_IOMUX);
   DL_GPIO_enableOutput(RELAY_PORT, RELAY_RELAY_EN_PIN);
   DL_GPIO_clearPins(RELAY_PORT, RELAY_RELAY_EN_PIN);
