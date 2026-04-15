@@ -17,7 +17,8 @@
 #include "variables.h"
 #include "adc_mux.h"
 #include "control.h"
-
-
+#include "i2c_common.h"
+#include "spi.h"
+#include "app.h"
 
 #endif

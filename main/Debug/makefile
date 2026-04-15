@@ -141,7 +141,7 @@ all: $(OBJS) $(GEN_CMDS)
 	@$(MAKE) --no-print-directory -Onone "main.out"
 
 dependents:
-	-cd C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Debug && $(MAKE) clean all
+	-cd C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Debug && $(MAKE) all
 
 # Tool invocations
 main.out: $(OBJS) $(GEN_CMDS) C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Debug/MSPM0G_Library.lib

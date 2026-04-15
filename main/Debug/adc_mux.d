@@ -81,7 +81,7 @@ adc_mux.o: ../adc_mux.c ../adc_mux.h ../headers.h \
  ../usb.h ../delay_timer.h \
  C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/I2C_Controller.h \
  C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/SPI_Interface.h \
- ../variables.h ../control.h
+ ../variables.h ../control.h ../i2c_common.h ../spi.h ../app.h
 ../adc_mux.h:
 ../headers.h:
 ti_msp_dl_config.h:
@@ -167,3 +167,6 @@ C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/I2C_Control
 C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/SPI_Interface.h:
 ../variables.h:
 ../control.h:
+../i2c_common.h:
+../spi.h:
+../app.h:
