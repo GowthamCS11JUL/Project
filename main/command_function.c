@@ -1,5 +1,6 @@
 #include "command_function.h"
 #include "adc_mux.h"
+#include "control.h"
 #include "headers.h"
 #include "i2c_common.h"
 #include "ti/driverlib/m0p/dl_core.h"
@@ -62,7 +63,7 @@ void reset_i2c(void)
 {
     reset_current_measurement();
     reset_io_expander();
-    data_transmit(0X00);
+    // data_transmit(0X00);
 }
 
 void reset_io_expander(void)
@@ -106,11 +107,11 @@ static void read_mux_adc(uint8_t mux1, uint8_t mux2,
         mux_select(MUX_ID_2, mux2);  // enables MUX2
 
         /* Step 3: stabilization */
-        delay_cycles(64);
+        delay_cycles(100);
 
         /* Step 4: dummy read */
         ADC122S625_Read(&ADC, 0);
-        delay_cycles(64);
+        delay_cycles(100);
 
         /* Step 5: actual read */
         out = ADC122S625_Read(&ADC, 0);
@@ -323,11 +324,39 @@ void switch_voltage_press_site_0(void)
 }
 
     
+// void voltage_current_measurement_site_on(void)
+// {
+//     // uint8_t write_cmd_1[3] = {0x00, 0x00, 0x10};  // CONFIG (ADCRANGE=0)
+//     // uint8_t write_cmd_2[3] = {0x02, 0x11, 0x90};  // SHUNT_CAL (correct!)
+
+//     uint8_t read_cmd[3] = {0x04, 0x00, 0x00};     // CURRENT register
+
+//     uint32_t value = 0;
+
+//     /* Configure INA228 */
+//     // i2c_common(SLAVE_U7_0, write_cmd_1, 3, NULL, 0);
+//     // i2c_common(SLAVE_U7_0, write_cmd_2, 3, NULL, 0);
+
+//     /* Read current */
+//     value = i2c_common(SLAVE_U7_0, NULL, 0, read_cmd, 3);
+//     value=value>>4;
+//     /* Sign extend 20-bit */
+//    if(value>0x7FFFF)
+//    {
+//    value=0XFFFFF-value;
+//    }
+
+
+//     /* Send raw or converted */
+//     data_transmit(value);
+// }
+
+
 void voltage_current_measurement_site_on(void)
 {
     // uint8_t write_cmd_1[3] = {0x00, 0x00, 0x10};  // CONFIG (ADCRANGE=0)
     // uint8_t write_cmd_2[3] = {0x02, 0x11, 0x90};  // SHUNT_CAL (correct!)
-
+    relay_on();
     uint8_t read_cmd[3] = {0x04, 0x00, 0x00};     // CURRENT register
 
     uint32_t value = 0;
@@ -350,7 +379,6 @@ void voltage_current_measurement_site_on(void)
     data_transmit(value);
 }
 
-
 void voltage_current_measurement_reset_site_0(void)
 {
     uint8_t write_cmd[3] = {0x00, 0x80,0X00};
@@ -362,6 +390,7 @@ void voltage_current_measurement_reset_site_0(void)
 void turn_off_all(void)
 {
     reset_i2c();
+    relay_off();
 }
 
 void apply_voltage(uint16_t mv)

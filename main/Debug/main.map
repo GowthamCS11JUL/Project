@@ -1,17 +1,17 @@
 ******************************************************************************
             TI ARM Clang Linker PC v4.0.0                      
 ******************************************************************************
->> Linked Thu May  7 14:47:11 2026
+>> Linked Thu May  7 16:07:01 2026
 
 OUTPUT FILE NAME:   <main.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00002f4d
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00002f85
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00020000  00003688  0001c978  R  X
+  FLASH                 00000000   00020000  000036e0  0001c920  R  X
   SRAM                  20200000   00008000  000017ff  00006801  RW X
   BCR_CONFIG            41c00000   00000080  00000000  00000080  R   
   BSL_CONFIG            41c00100   00000080  00000000  00000080  R   
@@ -21,11 +21,11 @@ SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    00003688   00003688    r-x
+00000000    00000000    000036e0   000036e0    r-x
   00000000    00000000    000000c0   000000c0    r-- .intvecs
-  000000c0    000000c0    00003338   00003338    r-x .text
-  000033f8    000033f8    00000250   00000250    r-- .rodata
-  00003648    00003648    00000040   00000040    r-- .cinit
+  000000c0    000000c0    00003390   00003390    r-x .text
+  00003450    00003450    00000250   00000250    r-- .rodata
+  000036a0    000036a0    00000040   00000040    r-- .cinit
 20200000    20200000    00001600   00000000    rw-
   20200000    20200000    000015eb   00000000    rw- .bss
   202015ec    202015ec    00000014   00000000    rw- .data
@@ -41,7 +41,7 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    000000c0     
                   00000000    000000c0     startup_mspm0g350x_ticlang.o (.intvecs)
 
-.text      0    000000c0    00003338     
+.text      0    000000c0    00003390     
                   000000c0    00000324     usb.o (.text.process_usb_command)
                   000003e4    0000024c     i2c_common.o (.text.i2c_common)
                   00000630    0000021c     app.o (.text.cmd_data_setup)
@@ -70,200 +70,203 @@ section   page    origin      length       input sections
                   000018a0    0000009a     libc.a : memcpy16.S.obj (.text:memcpy)
                   0000193a    00000002     --HOLE-- [fill = 0]
                   0000193c    00000098     MSPM0G_Library.lib : I2C_Controller.o (.text.I2C_Controller_Initialize)
-                  000019d4    00000094     command_function.o (.text.voltage_current_measurement_site_on)
-                  00001a68    00000088     MSPM0G_Library.lib : SPI_Interface.o (.text.SPI_Initialize)
-                  00001af0    00000088     command_function.o (.text.read_mux_adc)
-                  00001b78    00000088     usb.o (.text.usb_fsm)
-                  00001c00    0000007c     command_function.o (.text.power_supply_3v3_2_site_0)
-                  00001c7c    0000007c     libc.a : copy_decompress_lzss.c.obj (.text:decompress:lzss)
-                  00001cf8    00000078     MSPM0G_Library.lib : UART_Interface.o (.text.UART_rxDMA_Initialize)
-                  00001d70    00000078     command_function.o (.text.turn_off_all)
-                  00001de8    00000076     MSPM0G_Library.lib : SPI_Interface.o (.text.SPI_Transact)
-                  00001e5e    00000074                        : UART_Interface.o (.text.UART_txDMA_Initialize)
-                  00001ed2    00000002     --HOLE-- [fill = 0]
-                  00001ed4    00000074     adc_mux.o (.text.mux_init_all)
-                  00001f48    00000070     spi.o (.text.ADC122S625_Read)
-                  00001fb8    00000070     MSPM0G_Library.lib : I2C_Controller.o (.text.I2C_Controller_Start_Transmit)
-                  00002028    00000070     ti_msp_dl_config.o (.text.SYSCFG_DL_UART_0_init)
-                  00002098    00000070     MSPM0G_Library.lib : UART_Target.o (.text.UART_Target_Initialize)
-                  00002108    0000006c                        : UART_Target.o (.text.targetRxInProgressCb)
-                  00002174    00000064                        : UART_Target.o (.text.UART_Target_AssignCallBacks)
-                  000021d8    00000062     libc.a : memset16.S.obj (.text:memset)
-                  0000223a    00000002     --HOLE-- [fill = 0]
-                  0000223c    00000060     ti_msp_dl_config.o (.text.SYSCFG_DL_initPower)
-                  0000229c    00000060     usb.o (.text.usb_init)
-                  000022fc    0000005e     driverlib.a : dl_i2c.o (.text.DL_I2C_fillControllerTXFIFO)
-                  0000235a    00000002     --HOLE-- [fill = 0]
-                  0000235c    0000005c     ti_msp_dl_config.o (.text.SYSCFG_DL_SPI_0_init)
-                  000023b8    0000005a     MSPM0G_Library.lib : Timer_Timeout.o (.text.Timer_Timeout_Time_Set)
-                  00002412    00000058                        : I2C_Controller.o (.text.getControllerStatus)
-                  0000246a    00000002     --HOLE-- [fill = 0]
-                  0000246c    00000054     driverlib.a : dl_spi.o (.text.DL_SPI_drainRXFIFO16)
-                  000024c0    00000054                 : dl_uart.o (.text.DL_UART_drainRXFIFO)
-                  00002514    00000054                 : dl_uart.o (.text.DL_UART_fillTXFIFO)
-                  00002568    00000054     ti_msp_dl_config.o (.text.SYSCFG_DL_MCU_I2C_init)
-                  000025bc    00000054     command_function.o (.text.switch_voltage_press_site_0)
-                  00002610    00000050     MSPM0G_Library.lib : I2C_Controller.o (.text.DL_I2C_startControllerTransfer)
-                  00002660    0000004c                        : UART_Target.o (.text.UART_Target_Receive)
-                  000026ac    00000048     driverlib.a : dl_uart.o (.text.DL_UART_init)
-                  000026f4    00000046     MSPM0G_Library.lib : I2C_Controller.o (.text.I2C_Controller_Start_Receive)
-                  0000273a    00000002     --HOLE-- [fill = 0]
-                  0000273c    00000044     driverlib.a : dl_spi.o (.text.DL_SPI_init)
-                  00002780    00000044     ti_msp_dl_config.o (.text.SYSCFG_DL_init)
-                  000027c4    00000040     ti_msp_dl_config.o (.text.SYSCFG_DL_SYSCTL_init)
-                  00002804    00000040     libclang_rt.builtins.a : aeabi_uidivmod.S.obj (.text.__aeabi_uidivmod)
-                  00002844    0000003c     driverlib.a : dl_i2c.o (.text.DL_I2C_flushTargetTXFIFO)
-                  00002880    0000003c     ti_msp_dl_config.o (.text.SYSCFG_DL_TIMER_0_init)
-                  000028bc    0000003c     MSPM0G_Library.lib : UART_Target.o (.text.UART_Target_Transmit)
-                  000028f8    0000003c     libc.a : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
-                  00002934    00000038     MSPM0G_Library.lib : UART_Interface.o (.text.DL_DMA_setTrigger)
-                  0000296c    00000038     ti_msp_dl_config.o (.text.SYSCFG_DL_TIMER_1_init)
-                  000029a4    00000036     MSPM0G_Library.lib : Timer_Timeout.o (.text.Timer_Timeout_Start)
-                  000029da    00000036                        : UART_Interface.o (.text.UART_Interface_Stop_Receive)
-                  00002a10    00000034                        : UART_Interface.o (.text.DL_DMA_configMode)
-                  00002a44    00000034     app.o (.text.app_init)
-                  00002a78    00000034     MSPM0G_Library.lib : UART_Target.o (.text.timerCallback)
-                  00002aac    00000032                        : UART_Interface.o (.text.DL_DMA_setDestWidth)
-                  00002ade    00000030                        : UART_Interface.o (.text.DL_DMA_setDestIncrement)
-                  00002b0e    00000030                        : UART_Interface.o (.text.DL_DMA_setSrcWidth)
-                  00002b3e    00000002     --HOLE-- [fill = 0]
-                  00002b40    00000030                        : UART_Interface.o (.text.DL_DMA_setTransferSize)
-                  00002b70    00000030                        : UART_Target.o (.text.targetRxDoneCb)
-                  00002ba0    00000030                        : UART_Target.o (.text.targetTxDoneCb)
-                  00002bd0    0000002e                        : UART_Interface.o (.text.DL_DMA_setSrcIncrement)
-                  00002bfe    00000002     --HOLE-- [fill = 0]
-                  00002c00    0000002c     delay_timer.o (.text.Delay_Timer_Start)
-                  00002c2c    0000002c     MSPM0G_Library.lib : I2C_Controller.o (.text.__NVIC_ClearPendingIRQ)
-                  00002c58    0000002c                        : SPI_Interface.o (.text.__NVIC_ClearPendingIRQ)
-                  00002c84    0000002c                        : Timer_Timeout.o (.text.__NVIC_ClearPendingIRQ)
-                  00002cb0    0000002c                        : UART_Interface.o (.text.__NVIC_ClearPendingIRQ)
-                  00002cdc    0000002c                        : I2C_Controller.o (.text.__NVIC_EnableIRQ)
-                  00002d08    0000002c                        : SPI_Interface.o (.text.__NVIC_EnableIRQ)
-                  00002d34    0000002c                        : Timer_Timeout.o (.text.__NVIC_EnableIRQ)
-                  00002d60    0000002c                        : UART_Interface.o (.text.__NVIC_EnableIRQ)
-                  00002d8c    0000002a                        : Timer_Timeout.o (.text.Timer_Timeout_IRQ)
-                  00002db6    0000002a                        : Timer_Timeout.o (.text.Timer_Timeout_reStart)
-                  00002de0    0000002a                        : I2C_Controller.o (.text.waitForControllerToIdle)
-                  00002e0a    00000028                        : I2C_Controller.o (.text.DL_Common_updateReg)
-                  00002e32    00000028                        : Timer_Timeout.o (.text.DL_Common_updateReg)
-                  00002e5a    00000028                        : UART_Interface.o (.text.DL_Common_updateReg)
-                  00002e82    00000002     --HOLE-- [fill = 0]
-                  00002e84    00000028                        : UART_Interface.o (.text.DL_DMA_setDestAddr)
-                  00002eac    00000028                        : UART_Interface.o (.text.DL_DMA_setSrcAddr)
-                  00002ed4    00000028                        : I2C_Controller.o (.text.DL_I2C_setControllerRXFIFOThreshold)
-                  00002efc    00000028                        : I2C_Controller.o (.text.DL_I2C_setControllerTXFIFOThreshold)
-                  00002f24    00000028                        : UART_Target.o (.text.targetTxInProgressCb)
-                  00002f4c    00000028     libc.a : boot_cortex_m.c.obj (.text:_c_int00_noargs)
-                  00002f74    00000026     MSPM0G_Library.lib : UART_Interface.o (.text.DL_DMA_disableChannel)
-                  00002f9a    00000026                        : UART_Interface.o (.text.DL_DMA_enableChannel)
-                  00002fc0    00000026     driverlib.a : dl_i2c.o (.text.DL_I2C_setClockConfig)
-                  00002fe6    00000002     --HOLE-- [fill = 0]
-                  00002fe8    00000024     control.o (.text.control_init)
-                  0000300c    00000024     main.o (.text.main)
-                  00003030    00000020     MSPM0G_Library.lib : Timer_Timeout.o (.text.DL_Timer_setCounterValueAfterEnable)
-                  00003050    0000001c                        : I2C_Controller.o (.text.DL_I2C_enableInterrupt)
-                  0000306c    0000001c                        : I2C_Controller.o (.text.DL_I2C_isControllerRXFIFOEmpty)
-                  00003088    0000001c                        : Timer_Timeout.o (.text.DL_Timer_disableInterrupt)
-                  000030a4    0000001c                        : Timer_Timeout.o (.text.DL_Timer_enableInterrupt)
-                  000030c0    0000001c     driverlib.a : dl_timer.o (.text.DL_Timer_setClockConfig)
-                  000030dc    0000001c     MSPM0G_Library.lib : UART_Target.o (.text.UART_Target_getState)
-                  000030f8    00000018                        : Timer_Timeout.o (.text.DL_Timer_clearInterruptStatus)
-                  00003110    00000018                        : Timer_Timeout.o (.text.DL_Timer_setLoadValue)
-                  00003128    00000018                        : Timer_Timeout.o (.text.DL_Timer_startCounter)
-                  00003140    00000018                        : Timer_Timeout.o (.text.DL_Timer_stopCounter)
-                  00003158    00000018     i2c_common.o (.text.i2c_init)
-                  00003170    00000018     spi.o (.text.spi_init)
-                  00003188    00000016     MSPM0G_Library.lib : SPI_Interface.o (.text.DL_SPI_transmitData16)
-                  0000319e    00000016     delay_timer.o (.text.Delay_Timer_IRQ)
-                  000031b4    00000014     MSPM0G_Library.lib : I2C_Controller.o (.text.DL_I2C_getControllerStatus)
-                  000031c8    00000014                        : I2C_Controller.o (.text.DL_I2C_receiveControllerData)
-                  000031dc    00000014                        : SPI_Interface.o (.text.DL_SPI_receiveData16)
-                  000031f0    00000012                        : I2C_Controller.o (.text.DL_I2C_getPendingInterrupt)
-                  00003202    00000012                        : SPI_Interface.o (.text.DL_SPI_getPendingInterrupt)
-                  00003214    00000012     driverlib.a : dl_spi.o (.text.DL_SPI_setClockConfig)
-                  00003226    00000012     MSPM0G_Library.lib : Timer_Timeout.o (.text.DL_Timer_getPendingInterrupt)
-                  00003238    00000012                        : UART_Interface.o (.text.DL_UART_getPendingInterrupt)
-                  0000324a    00000012     driverlib.a : dl_uart.o (.text.DL_UART_setClockConfig)
-                  0000325c    00000012     delay_timer.o (.text.Delay_Timer_Get)
-                  0000326e    00000012     libc.a : copy_decompress_none.c.obj (.text:decompress:none)
-                  00003280    00000010     app.o (.text.I2C1_IRQHandler)
-                  00003290    00000010     MSPM0G_Library.lib : I2C_Controller.o (.text.I2C_Controller_Transaction_Done)
-                  000032a0    00000010     app.o (.text.SPI0_IRQHandler)
-                  000032b0    00000010     app.o (.text.TIMA0_IRQHandler)
-                  000032c0    00000010     app.o (.text.TIMG7_IRQHandler)
-                  000032d0    00000010     app.o (.text.UART0_IRQHandler)
-                  000032e0    00000010     MSPM0G_Library.lib : UART_Interface.o (.text.defaultUartCallBack)
-                  000032f0    00000010                        : UART_Interface.o (.text.defaultUartInprogressCallback)
-                  00003300    00000010     adc_mux.o (.text.mux_disable_all)
-                  00003310    00000010     libc.a : copy_zero_init.c.obj (.text:decompress:ZI)
-                  00003320    0000000c     libclang_rt.builtins.a : aeabi_memset.S.obj (.text.__aeabi_memclr)
-                  0000332c    0000000c     command_function.o (.text.battery_voltage_check_site_0)
-                  00003338    0000000c     MSPM0G_Library.lib : Timer_Timeout.o (.text.defaultTimerSingleTriggerCB)
-                  00003344    0000000c     command_function.o (.text.led_status_voltage_0_0_site_0)
-                  00003350    0000000c     command_function.o (.text.led_status_voltage_0_1_site_0)
-                  0000335c    0000000c     command_function.o (.text.led_status_voltage_1_0_site_0)
-                  00003368    0000000c     command_function.o (.text.led_status_voltage_1_site_0)
-                  00003374    0000000c     command_function.o (.text.led_status_voltage_2_0_site_0)
-                  00003380    0000000c     command_function.o (.text.led_status_voltage_2_site_0)
-                  0000338c    0000000c     command_function.o (.text.led_status_voltage_3_site_0)
-                  00003398    0000000c     MSPM0G_Library.lib : I2C_Controller.o (.text.noActionController)
-                  000033a4    0000000c                        : SPI_Interface.o (.text.noActionSPIInterface)
-                  000033b0    0000000c     control.o (.text.switch_off)
-                  000033bc    0000000c     control.o (.text.switch_on)
-                  000033c8    0000000c     command_function.o (.text.switch_voltage_default_site_0)
-                  000033d4    0000000a     driverlib.a : dl_common.o (.text.DL_Common_delayCycles)
-                  000033de    00000002     --HOLE-- [fill = 0]
-                  000033e0    00000008     libclang_rt.builtins.a : aeabi_memcpy.S.obj (.text.__aeabi_memcpy)
-                  000033e8    00000004     startup_mspm0g350x_ticlang.o (.text.Reset_Handler)
-                  000033ec    00000004     libc.a : pre_init.c.obj (.text._system_pre_init)
-                  000033f0    00000004            : exit.c.obj (.text:abort)
-                  000033f4    00000004     --HOLE-- [fill = 0]
+                  000019d4    00000098     command_function.o (.text.voltage_current_measurement_site_on)
+                  00001a6c    00000088     MSPM0G_Library.lib : SPI_Interface.o (.text.SPI_Initialize)
+                  00001af4    00000088     command_function.o (.text.read_mux_adc)
+                  00001b7c    00000088     usb.o (.text.usb_fsm)
+                  00001c04    0000007c     command_function.o (.text.power_supply_3v3_2_site_0)
+                  00001c80    0000007c     libc.a : copy_decompress_lzss.c.obj (.text:decompress:lzss)
+                  00001cfc    00000078     MSPM0G_Library.lib : UART_Interface.o (.text.UART_rxDMA_Initialize)
+                  00001d74    00000076                        : SPI_Interface.o (.text.SPI_Transact)
+                  00001dea    00000074                        : UART_Interface.o (.text.UART_txDMA_Initialize)
+                  00001e5e    00000002     --HOLE-- [fill = 0]
+                  00001e60    00000074     adc_mux.o (.text.mux_init_all)
+                  00001ed4    00000070     spi.o (.text.ADC122S625_Read)
+                  00001f44    00000070     MSPM0G_Library.lib : I2C_Controller.o (.text.I2C_Controller_Start_Transmit)
+                  00001fb4    00000070     ti_msp_dl_config.o (.text.SYSCFG_DL_UART_0_init)
+                  00002024    00000070     MSPM0G_Library.lib : UART_Target.o (.text.UART_Target_Initialize)
+                  00002094    0000006c                        : UART_Target.o (.text.targetRxInProgressCb)
+                  00002100    00000064                        : UART_Target.o (.text.UART_Target_AssignCallBacks)
+                  00002164    00000062     libc.a : memset16.S.obj (.text:memset)
+                  000021c6    00000002     --HOLE-- [fill = 0]
+                  000021c8    00000060     ti_msp_dl_config.o (.text.SYSCFG_DL_initPower)
+                  00002228    00000060     usb.o (.text.usb_init)
+                  00002288    0000005e     driverlib.a : dl_i2c.o (.text.DL_I2C_fillControllerTXFIFO)
+                  000022e6    00000002     --HOLE-- [fill = 0]
+                  000022e8    0000005c     ti_msp_dl_config.o (.text.SYSCFG_DL_SPI_0_init)
+                  00002344    0000005a     MSPM0G_Library.lib : Timer_Timeout.o (.text.Timer_Timeout_Time_Set)
+                  0000239e    00000058                        : I2C_Controller.o (.text.getControllerStatus)
+                  000023f6    00000056     command_function.o (.text.turn_off_all)
+                  0000244c    00000054     driverlib.a : dl_spi.o (.text.DL_SPI_drainRXFIFO16)
+                  000024a0    00000054                 : dl_uart.o (.text.DL_UART_drainRXFIFO)
+                  000024f4    00000054                 : dl_uart.o (.text.DL_UART_fillTXFIFO)
+                  00002548    00000054     ti_msp_dl_config.o (.text.SYSCFG_DL_MCU_I2C_init)
+                  0000259c    00000054     command_function.o (.text.switch_voltage_press_site_0)
+                  000025f0    00000052     command_function.o (.text.reset_i2c)
+                  00002642    00000002     --HOLE-- [fill = 0]
+                  00002644    00000050     MSPM0G_Library.lib : I2C_Controller.o (.text.DL_I2C_startControllerTransfer)
+                  00002694    0000004c                        : UART_Target.o (.text.UART_Target_Receive)
+                  000026e0    00000048     driverlib.a : dl_uart.o (.text.DL_UART_init)
+                  00002728    00000046     MSPM0G_Library.lib : I2C_Controller.o (.text.I2C_Controller_Start_Receive)
+                  0000276e    00000002     --HOLE-- [fill = 0]
+                  00002770    00000044     driverlib.a : dl_spi.o (.text.DL_SPI_init)
+                  000027b4    00000044     ti_msp_dl_config.o (.text.SYSCFG_DL_init)
+                  000027f8    00000040     ti_msp_dl_config.o (.text.SYSCFG_DL_SYSCTL_init)
+                  00002838    00000040     libclang_rt.builtins.a : aeabi_uidivmod.S.obj (.text.__aeabi_uidivmod)
+                  00002878    0000003c     driverlib.a : dl_i2c.o (.text.DL_I2C_flushTargetTXFIFO)
+                  000028b4    0000003c     ti_msp_dl_config.o (.text.SYSCFG_DL_TIMER_0_init)
+                  000028f0    0000003c     MSPM0G_Library.lib : UART_Target.o (.text.UART_Target_Transmit)
+                  0000292c    0000003c     libc.a : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  00002968    00000038     MSPM0G_Library.lib : UART_Interface.o (.text.DL_DMA_setTrigger)
+                  000029a0    00000038     ti_msp_dl_config.o (.text.SYSCFG_DL_TIMER_1_init)
+                  000029d8    00000038     app.o (.text.app_init)
+                  00002a10    00000036     MSPM0G_Library.lib : Timer_Timeout.o (.text.Timer_Timeout_Start)
+                  00002a46    00000036                        : UART_Interface.o (.text.UART_Interface_Stop_Receive)
+                  00002a7c    00000034                        : UART_Interface.o (.text.DL_DMA_configMode)
+                  00002ab0    00000034                        : UART_Target.o (.text.timerCallback)
+                  00002ae4    00000032                        : UART_Interface.o (.text.DL_DMA_setDestWidth)
+                  00002b16    00000030                        : UART_Interface.o (.text.DL_DMA_setDestIncrement)
+                  00002b46    00000030                        : UART_Interface.o (.text.DL_DMA_setSrcWidth)
+                  00002b76    00000002     --HOLE-- [fill = 0]
+                  00002b78    00000030                        : UART_Interface.o (.text.DL_DMA_setTransferSize)
+                  00002ba8    00000030                        : UART_Target.o (.text.targetRxDoneCb)
+                  00002bd8    00000030                        : UART_Target.o (.text.targetTxDoneCb)
+                  00002c08    0000002e                        : UART_Interface.o (.text.DL_DMA_setSrcIncrement)
+                  00002c36    00000002     --HOLE-- [fill = 0]
+                  00002c38    0000002c     delay_timer.o (.text.Delay_Timer_Start)
+                  00002c64    0000002c     MSPM0G_Library.lib : I2C_Controller.o (.text.__NVIC_ClearPendingIRQ)
+                  00002c90    0000002c                        : SPI_Interface.o (.text.__NVIC_ClearPendingIRQ)
+                  00002cbc    0000002c                        : Timer_Timeout.o (.text.__NVIC_ClearPendingIRQ)
+                  00002ce8    0000002c                        : UART_Interface.o (.text.__NVIC_ClearPendingIRQ)
+                  00002d14    0000002c                        : I2C_Controller.o (.text.__NVIC_EnableIRQ)
+                  00002d40    0000002c                        : SPI_Interface.o (.text.__NVIC_EnableIRQ)
+                  00002d6c    0000002c                        : Timer_Timeout.o (.text.__NVIC_EnableIRQ)
+                  00002d98    0000002c                        : UART_Interface.o (.text.__NVIC_EnableIRQ)
+                  00002dc4    0000002a                        : Timer_Timeout.o (.text.Timer_Timeout_IRQ)
+                  00002dee    0000002a                        : Timer_Timeout.o (.text.Timer_Timeout_reStart)
+                  00002e18    0000002a                        : I2C_Controller.o (.text.waitForControllerToIdle)
+                  00002e42    00000028                        : I2C_Controller.o (.text.DL_Common_updateReg)
+                  00002e6a    00000028                        : Timer_Timeout.o (.text.DL_Common_updateReg)
+                  00002e92    00000028                        : UART_Interface.o (.text.DL_Common_updateReg)
+                  00002eba    00000002     --HOLE-- [fill = 0]
+                  00002ebc    00000028                        : UART_Interface.o (.text.DL_DMA_setDestAddr)
+                  00002ee4    00000028                        : UART_Interface.o (.text.DL_DMA_setSrcAddr)
+                  00002f0c    00000028                        : I2C_Controller.o (.text.DL_I2C_setControllerRXFIFOThreshold)
+                  00002f34    00000028                        : I2C_Controller.o (.text.DL_I2C_setControllerTXFIFOThreshold)
+                  00002f5c    00000028                        : UART_Target.o (.text.targetTxInProgressCb)
+                  00002f84    00000028     libc.a : boot_cortex_m.c.obj (.text:_c_int00_noargs)
+                  00002fac    00000026     MSPM0G_Library.lib : UART_Interface.o (.text.DL_DMA_disableChannel)
+                  00002fd2    00000026                        : UART_Interface.o (.text.DL_DMA_enableChannel)
+                  00002ff8    00000026     driverlib.a : dl_i2c.o (.text.DL_I2C_setClockConfig)
+                  0000301e    00000002     --HOLE-- [fill = 0]
+                  00003020    00000024     control.o (.text.control_init)
+                  00003044    00000024     main.o (.text.main)
+                  00003068    00000020     MSPM0G_Library.lib : Timer_Timeout.o (.text.DL_Timer_setCounterValueAfterEnable)
+                  00003088    0000001c                        : I2C_Controller.o (.text.DL_I2C_enableInterrupt)
+                  000030a4    0000001c                        : I2C_Controller.o (.text.DL_I2C_isControllerRXFIFOEmpty)
+                  000030c0    0000001c                        : Timer_Timeout.o (.text.DL_Timer_disableInterrupt)
+                  000030dc    0000001c                        : Timer_Timeout.o (.text.DL_Timer_enableInterrupt)
+                  000030f8    0000001c     driverlib.a : dl_timer.o (.text.DL_Timer_setClockConfig)
+                  00003114    0000001c     MSPM0G_Library.lib : UART_Target.o (.text.UART_Target_getState)
+                  00003130    00000018                        : Timer_Timeout.o (.text.DL_Timer_clearInterruptStatus)
+                  00003148    00000018                        : Timer_Timeout.o (.text.DL_Timer_setLoadValue)
+                  00003160    00000018                        : Timer_Timeout.o (.text.DL_Timer_startCounter)
+                  00003178    00000018                        : Timer_Timeout.o (.text.DL_Timer_stopCounter)
+                  00003190    00000018     i2c_common.o (.text.i2c_init)
+                  000031a8    00000018     spi.o (.text.spi_init)
+                  000031c0    00000016     MSPM0G_Library.lib : SPI_Interface.o (.text.DL_SPI_transmitData16)
+                  000031d6    00000016     delay_timer.o (.text.Delay_Timer_IRQ)
+                  000031ec    00000014     MSPM0G_Library.lib : I2C_Controller.o (.text.DL_I2C_getControllerStatus)
+                  00003200    00000014                        : I2C_Controller.o (.text.DL_I2C_receiveControllerData)
+                  00003214    00000014                        : SPI_Interface.o (.text.DL_SPI_receiveData16)
+                  00003228    00000012                        : I2C_Controller.o (.text.DL_I2C_getPendingInterrupt)
+                  0000323a    00000012                        : SPI_Interface.o (.text.DL_SPI_getPendingInterrupt)
+                  0000324c    00000012     driverlib.a : dl_spi.o (.text.DL_SPI_setClockConfig)
+                  0000325e    00000012     MSPM0G_Library.lib : Timer_Timeout.o (.text.DL_Timer_getPendingInterrupt)
+                  00003270    00000012                        : UART_Interface.o (.text.DL_UART_getPendingInterrupt)
+                  00003282    00000012     driverlib.a : dl_uart.o (.text.DL_UART_setClockConfig)
+                  00003294    00000012     delay_timer.o (.text.Delay_Timer_Get)
+                  000032a6    00000012     libc.a : copy_decompress_none.c.obj (.text:decompress:none)
+                  000032b8    00000010     app.o (.text.I2C1_IRQHandler)
+                  000032c8    00000010     MSPM0G_Library.lib : I2C_Controller.o (.text.I2C_Controller_Transaction_Done)
+                  000032d8    00000010     app.o (.text.SPI0_IRQHandler)
+                  000032e8    00000010     app.o (.text.TIMA0_IRQHandler)
+                  000032f8    00000010     app.o (.text.TIMG7_IRQHandler)
+                  00003308    00000010     app.o (.text.UART0_IRQHandler)
+                  00003318    00000010     MSPM0G_Library.lib : UART_Interface.o (.text.defaultUartCallBack)
+                  00003328    00000010                        : UART_Interface.o (.text.defaultUartInprogressCallback)
+                  00003338    00000010     adc_mux.o (.text.mux_disable_all)
+                  00003348    00000010     control.o (.text.relay_off)
+                  00003358    00000010     control.o (.text.relay_on)
+                  00003368    00000010     libc.a : copy_zero_init.c.obj (.text:decompress:ZI)
+                  00003378    0000000c     libclang_rt.builtins.a : aeabi_memset.S.obj (.text.__aeabi_memclr)
+                  00003384    0000000c     command_function.o (.text.battery_voltage_check_site_0)
+                  00003390    0000000c     MSPM0G_Library.lib : Timer_Timeout.o (.text.defaultTimerSingleTriggerCB)
+                  0000339c    0000000c     command_function.o (.text.led_status_voltage_0_0_site_0)
+                  000033a8    0000000c     command_function.o (.text.led_status_voltage_0_1_site_0)
+                  000033b4    0000000c     command_function.o (.text.led_status_voltage_1_0_site_0)
+                  000033c0    0000000c     command_function.o (.text.led_status_voltage_1_site_0)
+                  000033cc    0000000c     command_function.o (.text.led_status_voltage_2_0_site_0)
+                  000033d8    0000000c     command_function.o (.text.led_status_voltage_2_site_0)
+                  000033e4    0000000c     command_function.o (.text.led_status_voltage_3_site_0)
+                  000033f0    0000000c     MSPM0G_Library.lib : I2C_Controller.o (.text.noActionController)
+                  000033fc    0000000c                        : SPI_Interface.o (.text.noActionSPIInterface)
+                  00003408    0000000c     control.o (.text.switch_off)
+                  00003414    0000000c     control.o (.text.switch_on)
+                  00003420    0000000c     command_function.o (.text.switch_voltage_default_site_0)
+                  0000342c    0000000a     driverlib.a : dl_common.o (.text.DL_Common_delayCycles)
+                  00003436    00000002     --HOLE-- [fill = 0]
+                  00003438    00000008     libclang_rt.builtins.a : aeabi_memcpy.S.obj (.text.__aeabi_memcpy)
+                  00003440    00000004     startup_mspm0g350x_ticlang.o (.text.Reset_Handler)
+                  00003444    00000004     libc.a : pre_init.c.obj (.text._system_pre_init)
+                  00003448    00000004            : exit.c.obj (.text:abort)
+                  0000344c    00000004     --HOLE-- [fill = 0]
 
-.cinit     0    00003648    00000040     
-                  00003648    00000018     (.cinit..data.load) [load image, compression = lzss]
-                  00003660    0000000c     (__TI_handler_table)
-                  0000366c    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  00003674    00000010     (__TI_cinit_table)
-                  00003684    00000004     --HOLE-- [fill = 0]
+.cinit     0    000036a0    00000040     
+                  000036a0    00000018     (.cinit..data.load) [load image, compression = lzss]
+                  000036b8    0000000c     (__TI_handler_table)
+                  000036c4    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000036cc    00000010     (__TI_cinit_table)
+                  000036dc    00000004     --HOLE-- [fill = 0]
 
-.rodata    0    000033f8    00000250     
-                  000033f8    00000018     app.o (.rodata.str1.147366942764206254111)
-                  00003410    00000018     app.o (.rodata.str1.21849889636613714601)
-                  00003428    00000018     app.o (.rodata.str1.61371923034458905691)
-                  00003440    00000018     app.o (.rodata.str1.97381019797524027191)
-                  00003458    00000017     app.o (.rodata.str1.112458129122677307381)
-                  0000346f    00000017     app.o (.rodata.str1.149615729164433715791)
-                  00003486    00000017     app.o (.rodata.str1.157211581842481736451)
-                  0000349d    00000017     app.o (.rodata.str1.180651896935739422851)
-                  000034b4    00000017     app.o (.rodata.str1.59354850965935802921)
-                  000034cb    00000017     app.o (.rodata.str1.89171471831847724281)
-                  000034e2    00000017     app.o (.rodata.str1.91024950347392736991)
-                  000034f9    00000016     app.o (.rodata.str1.181698742966647900341)
-                  0000350f    00000016     app.o (.rodata.str1.91830950864718940761)
-                  00003525    00000015     app.o (.rodata.str1.115467379878751397891)
-                  0000353a    00000015     app.o (.rodata.str1.35400907796042165521)
-                  0000354f    00000015     app.o (.rodata.str1.9803400861254684601)
-                  00003564    00000014     ti_msp_dl_config.o (.rodata.gTIMER_0TimerConfig)
-                  00003578    00000014     ti_msp_dl_config.o (.rodata.gTIMER_1TimerConfig)
-                  0000358c    00000012     command_function.o (.rodata.str1.173872204333794641154)
-                  0000359e    00000002     ti_msp_dl_config.o (.rodata.gMCU_I2CClockConfig)
-                  000035a0    00000011     command_function.o (.rodata.str1.156071013243755053984)
-                  000035b1    00000011     app.o (.rodata.str1.169018093591132782251)
-                  000035c2    00000011     app.o (.rodata.str1.23565378285222219201)
-                  000035d3    00000011     command_function.o (.rodata.str1.37878251672306965531)
-                  000035e4    00000011     app.o (.rodata.str1.62060578946142115471)
-                  000035f5    0000000f     app.o (.rodata.str1.51777625432436005601)
-                  00003604    0000000e     app.o (.rodata.str1.167043980239712816831)
-                  00003612    0000000c     app.o (.rodata.str1.160232246398851686891)
-                  0000361e    0000000a     ti_msp_dl_config.o (.rodata.gSPI_0_config)
-                  00003628    0000000a     ti_msp_dl_config.o (.rodata.gUART_0Config)
-                  00003632    00000006     app.o (.rodata.str1.120923545808373986691)
-                  00003638    00000003     ti_msp_dl_config.o (.rodata.gTIMER_0ClockConfig)
-                  0000363b    00000003     ti_msp_dl_config.o (.rodata.gTIMER_1ClockConfig)
-                  0000363e    00000003     app.o (.rodata.str1.144966739553529159871)
-                  00003641    00000002     ti_msp_dl_config.o (.rodata.gSPI_0_clockConfig)
-                  00003643    00000002     ti_msp_dl_config.o (.rodata.gUART_0ClockConfig)
-                  00003645    00000003     --HOLE-- [fill = 0]
+.rodata    0    00003450    00000250     
+                  00003450    00000018     app.o (.rodata.str1.147366942764206254111)
+                  00003468    00000018     app.o (.rodata.str1.21849889636613714601)
+                  00003480    00000018     app.o (.rodata.str1.61371923034458905691)
+                  00003498    00000018     app.o (.rodata.str1.97381019797524027191)
+                  000034b0    00000017     app.o (.rodata.str1.112458129122677307381)
+                  000034c7    00000017     app.o (.rodata.str1.149615729164433715791)
+                  000034de    00000017     app.o (.rodata.str1.157211581842481736451)
+                  000034f5    00000017     app.o (.rodata.str1.180651896935739422851)
+                  0000350c    00000017     app.o (.rodata.str1.59354850965935802921)
+                  00003523    00000017     app.o (.rodata.str1.89171471831847724281)
+                  0000353a    00000017     app.o (.rodata.str1.91024950347392736991)
+                  00003551    00000016     app.o (.rodata.str1.181698742966647900341)
+                  00003567    00000016     app.o (.rodata.str1.91830950864718940761)
+                  0000357d    00000015     app.o (.rodata.str1.115467379878751397891)
+                  00003592    00000015     app.o (.rodata.str1.35400907796042165521)
+                  000035a7    00000015     app.o (.rodata.str1.9803400861254684601)
+                  000035bc    00000014     ti_msp_dl_config.o (.rodata.gTIMER_0TimerConfig)
+                  000035d0    00000014     ti_msp_dl_config.o (.rodata.gTIMER_1TimerConfig)
+                  000035e4    00000012     command_function.o (.rodata.str1.173872204333794641154)
+                  000035f6    00000002     ti_msp_dl_config.o (.rodata.gMCU_I2CClockConfig)
+                  000035f8    00000011     command_function.o (.rodata.str1.156071013243755053984)
+                  00003609    00000011     app.o (.rodata.str1.169018093591132782251)
+                  0000361a    00000011     app.o (.rodata.str1.23565378285222219201)
+                  0000362b    00000011     command_function.o (.rodata.str1.37878251672306965531)
+                  0000363c    00000011     app.o (.rodata.str1.62060578946142115471)
+                  0000364d    0000000f     app.o (.rodata.str1.51777625432436005601)
+                  0000365c    0000000e     app.o (.rodata.str1.167043980239712816831)
+                  0000366a    0000000c     app.o (.rodata.str1.160232246398851686891)
+                  00003676    0000000a     ti_msp_dl_config.o (.rodata.gSPI_0_config)
+                  00003680    0000000a     ti_msp_dl_config.o (.rodata.gUART_0Config)
+                  0000368a    00000006     app.o (.rodata.str1.120923545808373986691)
+                  00003690    00000003     ti_msp_dl_config.o (.rodata.gTIMER_0ClockConfig)
+                  00003693    00000003     ti_msp_dl_config.o (.rodata.gTIMER_1ClockConfig)
+                  00003696    00000003     app.o (.rodata.str1.144966739553529159871)
+                  00003699    00000002     ti_msp_dl_config.o (.rodata.gSPI_0_clockConfig)
+                  0000369b    00000002     ti_msp_dl_config.o (.rodata.gUART_0ClockConfig)
+                  0000369d    00000003     --HOLE-- [fill = 0]
 
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
@@ -306,18 +309,18 @@ MODULE SUMMARY
        ------                         ----    -------   -------
     .\
        adc_mux.o                      408     0         5156   
-       command_function.o             2000    52        4      
+       command_function.o             2052    52        4      
        usb.o                          1194    0         16     
        ti_msp_dl_config.o             788     72        348    
-       app.o                          672     465       0      
+       app.o                          676     465       0      
        i2c_common.o                   612     0         32     
        delay_timer.o                  284     0         0      
        startup_mspm0g350x_ticlang.o   6       192       0      
        spi.o                          136     0         0      
-       control.o                      60      0         0      
+       control.o                      92      0         0      
        main.o                         36      0         0      
     +--+------------------------------+-------+---------+---------+
-       Total:                         6196    781       5556   
+       Total:                         6284    781       5556   
                                                                
     C:/Users/Gowtham CS/Downloads/MSPM0G_Library/MSPM0G_Library/Debug/MSPM0G_Library.lib
        UART_Interface.o               2154    0         0      
@@ -361,19 +364,19 @@ MODULE SUMMARY
        Stack:                         0       0         512    
        Linker Generated:              0       60        0      
     +--+------------------------------+-------+---------+---------+
-       Grand Total:                   13082   841       6143   
+       Grand Total:                   13170   841       6143   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00003674 records: 2, size/record: 8, table size: 16
-	.data: load addr=00003648, load size=00000018 bytes, run addr=202015ec, run size=00000014 bytes, compression=lzss
-	.bss: load addr=0000366c, load size=00000008 bytes, run addr=20200000, run size=000015eb bytes, compression=zero_init
+__TI_cinit_table @ 000036cc records: 2, size/record: 8, table size: 16
+	.data: load addr=000036a0, load size=00000018 bytes, run addr=202015ec, run size=00000014 bytes, compression=lzss
+	.bss: load addr=000036c4, load size=00000008 bytes, run addr=20200000, run size=000015eb bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00003660 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 000036b8 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_decompress_lzss
 	index: 1, handler: __TI_decompress_none
 	index: 2, handler: __TI_zero_init
@@ -385,75 +388,75 @@ address   name
 -------   ----                               
 2020153c  ADC                                
 00000a2b  ADC0_IRQHandler                    
-00001f49  ADC122S625_Read                    
+00001ed5  ADC122S625_Read                    
 00000a2b  ADC1_IRQHandler                    
 00000a2b  AES_IRQHandler                     
-000033f0  C$$EXIT                            
+00003448  C$$EXIT                            
 00000a2b  CANFD0_IRQHandler                  
 00000a2b  DAC0_IRQHandler                    
-000033d5  DL_Common_delayCycles              
-000022fd  DL_I2C_fillControllerTXFIFO        
-00002845  DL_I2C_flushTargetTXFIFO           
-00002fc1  DL_I2C_setClockConfig              
-0000246d  DL_SPI_drainRXFIFO16               
-0000273d  DL_SPI_init                        
-00003215  DL_SPI_setClockConfig              
+0000342d  DL_Common_delayCycles              
+00002289  DL_I2C_fillControllerTXFIFO        
+00002879  DL_I2C_flushTargetTXFIFO           
+00002ff9  DL_I2C_setClockConfig              
+0000244d  DL_SPI_drainRXFIFO16               
+00002771  DL_SPI_init                        
+0000324d  DL_SPI_setClockConfig              
 000010c9  DL_Timer_initTimerMode             
-000030c1  DL_Timer_setClockConfig            
-000024c1  DL_UART_drainRXFIFO                
-00002515  DL_UART_fillTXFIFO                 
-000026ad  DL_UART_init                       
-0000324b  DL_UART_setClockConfig             
+000030f9  DL_Timer_setClockConfig            
+000024a1  DL_UART_drainRXFIFO                
+000024f5  DL_UART_fillTXFIFO                 
+000026e1  DL_UART_init                       
+00003283  DL_UART_setClockConfig             
 00000a2b  DMA_IRQHandler                     
 00000a2b  Default_Handler                    
-0000325d  Delay_Timer_Get                    
-0000319f  Delay_Timer_IRQ                    
+00003295  Delay_Timer_Get                    
+000031d7  Delay_Timer_IRQ                    
 0000127d  Delay_Timer_Initialize             
-00002c01  Delay_Timer_Start                  
+00002c39  Delay_Timer_Start                  
 00000a2b  GROUP0_IRQHandler                  
 00000a2b  GROUP1_IRQHandler                  
 00000a2b  HardFault_Handler                  
 00000a2b  I2C0_IRQHandler                    
-00003281  I2C1_IRQHandler                    
+000032b9  I2C1_IRQHandler                    
 00000ecd  I2C_Controller_IRQ                 
 0000193d  I2C_Controller_Initialize          
-000026f5  I2C_Controller_Start_Receive       
-00001fb9  I2C_Controller_Start_Transmit      
-00003291  I2C_Controller_Transaction_Done    
+00002729  I2C_Controller_Start_Receive       
+00001f45  I2C_Controller_Start_Transmit      
+000032c9  I2C_Controller_Transaction_Done    
 20201584  I2C_MCU                            
 00000a2b  NMI_Handler                        
 00000a2b  PendSV_Handler                     
 00000a2b  RTC_IRQHandler                     
-000033e9  Reset_Handler                      
-000032a1  SPI0_IRQHandler                    
+00003441  Reset_Handler                      
+000032d9  SPI0_IRQHandler                    
 00000a2b  SPI1_IRQHandler                    
 0000140d  SPI_IRQ                            
-00001a69  SPI_Initialize                     
-00001de9  SPI_Transact                       
+00001a6d  SPI_Initialize                     
+00001d75  SPI_Transact                       
 00000a2b  SVC_Handler                        
 00001805  SYSCFG_DL_GPIO_init                
-00002569  SYSCFG_DL_MCU_I2C_init             
-0000235d  SYSCFG_DL_SPI_0_init               
-000027c5  SYSCFG_DL_SYSCTL_init              
-00002881  SYSCFG_DL_TIMER_0_init             
-0000296d  SYSCFG_DL_TIMER_1_init             
-00002029  SYSCFG_DL_UART_0_init              
-00002781  SYSCFG_DL_init                     
-0000223d  SYSCFG_DL_initPower                
+00002549  SYSCFG_DL_MCU_I2C_init             
+000022e9  SYSCFG_DL_SPI_0_init               
+000027f9  SYSCFG_DL_SYSCTL_init              
+000028b5  SYSCFG_DL_TIMER_0_init             
+000029a1  SYSCFG_DL_TIMER_1_init             
+00001fb5  SYSCFG_DL_UART_0_init              
+000027b5  SYSCFG_DL_init                     
+000021c9  SYSCFG_DL_initPower                
 00000a2b  SysTick_Handler                    
-000032b1  TIMA0_IRQHandler                   
+000032e9  TIMA0_IRQHandler                   
 00000a2b  TIMA1_IRQHandler                   
 00000a2b  TIMG0_IRQHandler                   
 00000a2b  TIMG12_IRQHandler                  
 00000a2b  TIMG6_IRQHandler                   
-000032c1  TIMG7_IRQHandler                   
+000032f9  TIMG7_IRQHandler                   
 00000a2b  TIMG8_IRQHandler                   
-00002d8d  Timer_Timeout_IRQ                  
+00002dc5  Timer_Timeout_IRQ                  
 00000dcd  Timer_Timeout_Inialize             
-000029a5  Timer_Timeout_Start                
-000023b9  Timer_Timeout_Time_Set             
-00002db7  Timer_Timeout_reStart              
-000032d1  UART0_IRQHandler                   
+00002a11  Timer_Timeout_Start                
+00002345  Timer_Timeout_Time_Set             
+00002def  Timer_Timeout_reStart              
+00003309  UART0_IRQHandler                   
 00000a2b  UART1_IRQHandler                   
 00000a2b  UART2_IRQHandler                   
 00000a2b  UART3_IRQHandler                   
@@ -461,14 +464,14 @@ address   name
 00000a2d  UART_Interface_Initialize          
 000016c5  UART_Interface_Start_Receive       
 00001621  UART_Interface_Start_Transmit      
-000029db  UART_Interface_Stop_Receive        
-00002175  UART_Target_AssignCallBacks        
-00002099  UART_Target_Initialize             
-00002661  UART_Target_Receive                
-000028bd  UART_Target_Transmit               
-000030dd  UART_Target_getState               
-00001cf9  UART_rxDMA_Initialize              
-00001e5f  UART_txDMA_Initialize              
+00002a47  UART_Interface_Stop_Receive        
+00002101  UART_Target_AssignCallBacks        
+00002025  UART_Target_Initialize             
+00002695  UART_Target_Receive                
+000028f1  UART_Target_Transmit               
+00003115  UART_Target_getState               
+00001cfd  UART_rxDMA_Initialize              
+00001deb  UART_txDMA_Initialize              
 20200000  USB_DATA                           
 20201560  USB_Timeout                        
 202014e0  USB_UART                           
@@ -483,28 +486,28 @@ address   name
 00000000  __TI_ATRegion2_region_sz           
 00000000  __TI_ATRegion2_src_addr            
 00000000  __TI_ATRegion2_trg_addr            
-00003674  __TI_CINIT_Base                    
-00003684  __TI_CINIT_Limit                   
-00003684  __TI_CINIT_Warm                    
-00003660  __TI_Handler_Table_Base            
-0000366c  __TI_Handler_Table_Limit           
-000028f9  __TI_auto_init_nobinit_nopinit     
-00001c7d  __TI_decompress_lzss               
-0000326f  __TI_decompress_none               
+000036cc  __TI_CINIT_Base                    
+000036dc  __TI_CINIT_Limit                   
+000036dc  __TI_CINIT_Warm                    
+000036b8  __TI_Handler_Table_Base            
+000036c4  __TI_Handler_Table_Limit           
+0000292d  __TI_auto_init_nobinit_nopinit     
+00001c81  __TI_decompress_lzss               
+000032a7  __TI_decompress_none               
 ffffffff  __TI_pprof_out_hndl                
 ffffffff  __TI_prof_data_size                
 ffffffff  __TI_prof_data_start               
 00000000  __TI_static_base__                 
-00003311  __TI_zero_init                     
+00003369  __TI_zero_init                     
 00000fcb  __aeabi_idiv0                      
-00003321  __aeabi_memclr                     
-00003321  __aeabi_memclr4                    
-00003321  __aeabi_memclr8                    
-000033e1  __aeabi_memcpy                     
-000033e1  __aeabi_memcpy4                    
-000033e1  __aeabi_memcpy8                    
-00002805  __aeabi_uidiv                      
-00002805  __aeabi_uidivmod                   
+00003379  __aeabi_memclr                     
+00003379  __aeabi_memclr4                    
+00003379  __aeabi_memclr8                    
+00003439  __aeabi_memcpy                     
+00003439  __aeabi_memcpy4                    
+00003439  __aeabi_memcpy8                    
+00002839  __aeabi_uidiv                      
+00002839  __aeabi_uidivmod                   
 ffffffff  __binit__                          
 UNDEFED   __mpu_init                         
 20207e00  __stack                            
@@ -512,68 +515,71 @@ UNDEFED   __mpu_init
 20200000  __start___llvm_prf_cnts            
 20200000  __stop___llvm_prf_bits             
 20200000  __stop___llvm_prf_cnts             
-00002f4d  _c_int00_noargs                    
+00002f85  _c_int00_noargs                    
 UNDEFED   _system_post_cinit                 
-000033ed  _system_pre_init                   
-000033f1  abort                              
-00002a45  app_init                           
+00003445  _system_pre_init                   
+00003449  abort                              
+000029d9  app_init                           
 00000cbd  apply_voltage                      
-0000332d  battery_voltage_check_site_0       
+00003385  battery_voltage_check_site_0       
 ffffffff  binit                              
 00000631  cmd_data_setup                     
-00002fe9  control_init                       
-00003339  defaultTimerSingleTriggerCB        
-000032e1  defaultUartCallBack                
-000032f1  defaultUartInprogressCallback      
+00003021  control_init                       
+00003391  defaultTimerSingleTriggerCB        
+00003319  defaultUartCallBack                
+00003329  defaultUartInprogressCallback      
 202015a4  delay                              
 202015e4  executing_command                  
 20201514  gSPI_0Backup                       
 20201364  gTIMER_0Backup                     
 20201420  gTIMER_1Backup                     
-00002413  getControllerStatus                
+0000239f  getControllerStatus                
 20201498  glUartTarget                       
 202015e8  glUartTargetIndexFromTimerIndex    
 000003e5  i2c_common                         
-00003159  i2c_init                           
+00003191  i2c_init                           
 00000000  interruptVectors                   
 000014c1  ldo_power_on_site_0                
-00003345  led_status_voltage_0_0_site_0      
-00003351  led_status_voltage_0_1_site_0      
-0000335d  led_status_voltage_1_0_site_0      
-00003369  led_status_voltage_1_site_0        
-00003375  led_status_voltage_2_0_site_0      
-00003381  led_status_voltage_2_site_0        
-0000338d  led_status_voltage_3_site_0        
-0000300d  main                               
+0000339d  led_status_voltage_0_0_site_0      
+000033a9  led_status_voltage_0_1_site_0      
+000033b5  led_status_voltage_1_0_site_0      
+000033c1  led_status_voltage_1_site_0        
+000033cd  led_status_voltage_2_0_site_0      
+000033d9  led_status_voltage_2_site_0        
+000033e5  led_status_voltage_3_site_0        
+00003045  main                               
 000018a1  memcpy                             
-000021d9  memset                             
-00003301  mux_disable_all                    
-00001ed5  mux_init_all                       
+00002165  memset                             
+00003339  mux_disable_all                    
+00001e61  mux_init_all                       
 00000ba9  mux_select                         
-00003399  noActionController                 
-000033a5  noActionSPIInterface               
+000033f1  noActionController                 
+000033fd  noActionSPIInterface               
 000011b1  power_supply_2v7_1_site_0          
 00001571  power_supply_2v7_2_site_0          
 00000fcd  power_supply_3v3_1_site_0          
-00001c01  power_supply_3v3_2_site_0          
+00001c05  power_supply_3v3_2_site_0          
 000000c1  process_usb_command                
+00003349  relay_off                          
+00003359  relay_on                           
+000025f1  reset_i2c                          
 00001345  set_voltage_handler                
-00003171  spi_init                           
-000033b1  switch_off                         
-000033bd  switch_on                          
-000033c9  switch_voltage_default_site_0      
-000025bd  switch_voltage_press_site_0        
-00002b71  targetRxDoneCb                     
-00002109  targetRxInProgressCb               
-00002ba1  targetTxDoneCb                     
-00002f25  targetTxInProgressCb               
-00002a79  timerCallback                      
-00001d71  turn_off_all                       
+000031a9  spi_init                           
+00003409  switch_off                         
+00003415  switch_on                          
+00003421  switch_voltage_default_site_0      
+0000259d  switch_voltage_press_site_0        
+00002ba9  targetRxDoneCb                     
+00002095  targetRxInProgressCb               
+00002bd9  targetTxDoneCb                     
+00002f5d  targetTxInProgressCb               
+00002ab1  timerCallback                      
+000023f7  turn_off_all                       
 00001765  usb_cmd_data_setup                 
-00001b79  usb_fsm                            
-0000229d  usb_init                           
+00001b7d  usb_fsm                            
+00002229  usb_init                           
 000019d5  voltage_current_measurement_site_on
-00002de1  waitForControllerToIdle            
+00002e19  waitForControllerToIdle            
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -642,110 +648,113 @@ address   name
 000018a1  memcpy                             
 0000193d  I2C_Controller_Initialize          
 000019d5  voltage_current_measurement_site_on
-00001a69  SPI_Initialize                     
-00001b79  usb_fsm                            
-00001c01  power_supply_3v3_2_site_0          
-00001c7d  __TI_decompress_lzss               
-00001cf9  UART_rxDMA_Initialize              
-00001d71  turn_off_all                       
-00001de9  SPI_Transact                       
-00001e5f  UART_txDMA_Initialize              
-00001ed5  mux_init_all                       
-00001f49  ADC122S625_Read                    
-00001fb9  I2C_Controller_Start_Transmit      
-00002029  SYSCFG_DL_UART_0_init              
-00002099  UART_Target_Initialize             
-00002109  targetRxInProgressCb               
-00002175  UART_Target_AssignCallBacks        
-000021d9  memset                             
-0000223d  SYSCFG_DL_initPower                
-0000229d  usb_init                           
-000022fd  DL_I2C_fillControllerTXFIFO        
-0000235d  SYSCFG_DL_SPI_0_init               
-000023b9  Timer_Timeout_Time_Set             
-00002413  getControllerStatus                
-0000246d  DL_SPI_drainRXFIFO16               
-000024c1  DL_UART_drainRXFIFO                
-00002515  DL_UART_fillTXFIFO                 
-00002569  SYSCFG_DL_MCU_I2C_init             
-000025bd  switch_voltage_press_site_0        
-00002661  UART_Target_Receive                
-000026ad  DL_UART_init                       
-000026f5  I2C_Controller_Start_Receive       
-0000273d  DL_SPI_init                        
-00002781  SYSCFG_DL_init                     
-000027c5  SYSCFG_DL_SYSCTL_init              
-00002805  __aeabi_uidiv                      
-00002805  __aeabi_uidivmod                   
-00002845  DL_I2C_flushTargetTXFIFO           
-00002881  SYSCFG_DL_TIMER_0_init             
-000028bd  UART_Target_Transmit               
-000028f9  __TI_auto_init_nobinit_nopinit     
-0000296d  SYSCFG_DL_TIMER_1_init             
-000029a5  Timer_Timeout_Start                
-000029db  UART_Interface_Stop_Receive        
-00002a45  app_init                           
-00002a79  timerCallback                      
-00002b71  targetRxDoneCb                     
-00002ba1  targetTxDoneCb                     
-00002c01  Delay_Timer_Start                  
-00002d8d  Timer_Timeout_IRQ                  
-00002db7  Timer_Timeout_reStart              
-00002de1  waitForControllerToIdle            
-00002f25  targetTxInProgressCb               
-00002f4d  _c_int00_noargs                    
-00002fc1  DL_I2C_setClockConfig              
-00002fe9  control_init                       
-0000300d  main                               
-000030c1  DL_Timer_setClockConfig            
-000030dd  UART_Target_getState               
-00003159  i2c_init                           
-00003171  spi_init                           
-0000319f  Delay_Timer_IRQ                    
-00003215  DL_SPI_setClockConfig              
-0000324b  DL_UART_setClockConfig             
-0000325d  Delay_Timer_Get                    
-0000326f  __TI_decompress_none               
-00003281  I2C1_IRQHandler                    
-00003291  I2C_Controller_Transaction_Done    
-000032a1  SPI0_IRQHandler                    
-000032b1  TIMA0_IRQHandler                   
-000032c1  TIMG7_IRQHandler                   
-000032d1  UART0_IRQHandler                   
-000032e1  defaultUartCallBack                
-000032f1  defaultUartInprogressCallback      
-00003301  mux_disable_all                    
-00003311  __TI_zero_init                     
-00003321  __aeabi_memclr                     
-00003321  __aeabi_memclr4                    
-00003321  __aeabi_memclr8                    
-0000332d  battery_voltage_check_site_0       
-00003339  defaultTimerSingleTriggerCB        
-00003345  led_status_voltage_0_0_site_0      
-00003351  led_status_voltage_0_1_site_0      
-0000335d  led_status_voltage_1_0_site_0      
-00003369  led_status_voltage_1_site_0        
-00003375  led_status_voltage_2_0_site_0      
-00003381  led_status_voltage_2_site_0        
-0000338d  led_status_voltage_3_site_0        
-00003399  noActionController                 
-000033a5  noActionSPIInterface               
-000033b1  switch_off                         
-000033bd  switch_on                          
-000033c9  switch_voltage_default_site_0      
-000033d5  DL_Common_delayCycles              
-000033e1  __aeabi_memcpy                     
-000033e1  __aeabi_memcpy4                    
-000033e1  __aeabi_memcpy8                    
-000033e9  Reset_Handler                      
-000033ed  _system_pre_init                   
-000033f0  C$$EXIT                            
-000033f1  abort                              
-00003660  __TI_Handler_Table_Base            
-0000366c  __TI_Handler_Table_Limit           
-00003674  __TI_CINIT_Base                    
-00003684  __TI_CINIT_Limit                   
-00003684  __TI_CINIT_Warm                    
+00001a6d  SPI_Initialize                     
+00001b7d  usb_fsm                            
+00001c05  power_supply_3v3_2_site_0          
+00001c81  __TI_decompress_lzss               
+00001cfd  UART_rxDMA_Initialize              
+00001d75  SPI_Transact                       
+00001deb  UART_txDMA_Initialize              
+00001e61  mux_init_all                       
+00001ed5  ADC122S625_Read                    
+00001f45  I2C_Controller_Start_Transmit      
+00001fb5  SYSCFG_DL_UART_0_init              
+00002025  UART_Target_Initialize             
+00002095  targetRxInProgressCb               
+00002101  UART_Target_AssignCallBacks        
+00002165  memset                             
+000021c9  SYSCFG_DL_initPower                
+00002229  usb_init                           
+00002289  DL_I2C_fillControllerTXFIFO        
+000022e9  SYSCFG_DL_SPI_0_init               
+00002345  Timer_Timeout_Time_Set             
+0000239f  getControllerStatus                
+000023f7  turn_off_all                       
+0000244d  DL_SPI_drainRXFIFO16               
+000024a1  DL_UART_drainRXFIFO                
+000024f5  DL_UART_fillTXFIFO                 
+00002549  SYSCFG_DL_MCU_I2C_init             
+0000259d  switch_voltage_press_site_0        
+000025f1  reset_i2c                          
+00002695  UART_Target_Receive                
+000026e1  DL_UART_init                       
+00002729  I2C_Controller_Start_Receive       
+00002771  DL_SPI_init                        
+000027b5  SYSCFG_DL_init                     
+000027f9  SYSCFG_DL_SYSCTL_init              
+00002839  __aeabi_uidiv                      
+00002839  __aeabi_uidivmod                   
+00002879  DL_I2C_flushTargetTXFIFO           
+000028b5  SYSCFG_DL_TIMER_0_init             
+000028f1  UART_Target_Transmit               
+0000292d  __TI_auto_init_nobinit_nopinit     
+000029a1  SYSCFG_DL_TIMER_1_init             
+000029d9  app_init                           
+00002a11  Timer_Timeout_Start                
+00002a47  UART_Interface_Stop_Receive        
+00002ab1  timerCallback                      
+00002ba9  targetRxDoneCb                     
+00002bd9  targetTxDoneCb                     
+00002c39  Delay_Timer_Start                  
+00002dc5  Timer_Timeout_IRQ                  
+00002def  Timer_Timeout_reStart              
+00002e19  waitForControllerToIdle            
+00002f5d  targetTxInProgressCb               
+00002f85  _c_int00_noargs                    
+00002ff9  DL_I2C_setClockConfig              
+00003021  control_init                       
+00003045  main                               
+000030f9  DL_Timer_setClockConfig            
+00003115  UART_Target_getState               
+00003191  i2c_init                           
+000031a9  spi_init                           
+000031d7  Delay_Timer_IRQ                    
+0000324d  DL_SPI_setClockConfig              
+00003283  DL_UART_setClockConfig             
+00003295  Delay_Timer_Get                    
+000032a7  __TI_decompress_none               
+000032b9  I2C1_IRQHandler                    
+000032c9  I2C_Controller_Transaction_Done    
+000032d9  SPI0_IRQHandler                    
+000032e9  TIMA0_IRQHandler                   
+000032f9  TIMG7_IRQHandler                   
+00003309  UART0_IRQHandler                   
+00003319  defaultUartCallBack                
+00003329  defaultUartInprogressCallback      
+00003339  mux_disable_all                    
+00003349  relay_off                          
+00003359  relay_on                           
+00003369  __TI_zero_init                     
+00003379  __aeabi_memclr                     
+00003379  __aeabi_memclr4                    
+00003379  __aeabi_memclr8                    
+00003385  battery_voltage_check_site_0       
+00003391  defaultTimerSingleTriggerCB        
+0000339d  led_status_voltage_0_0_site_0      
+000033a9  led_status_voltage_0_1_site_0      
+000033b5  led_status_voltage_1_0_site_0      
+000033c1  led_status_voltage_1_site_0        
+000033cd  led_status_voltage_2_0_site_0      
+000033d9  led_status_voltage_2_site_0        
+000033e5  led_status_voltage_3_site_0        
+000033f1  noActionController                 
+000033fd  noActionSPIInterface               
+00003409  switch_off                         
+00003415  switch_on                          
+00003421  switch_voltage_default_site_0      
+0000342d  DL_Common_delayCycles              
+00003439  __aeabi_memcpy                     
+00003439  __aeabi_memcpy4                    
+00003439  __aeabi_memcpy8                    
+00003441  Reset_Handler                      
+00003445  _system_pre_init                   
+00003448  C$$EXIT                            
+00003449  abort                              
+000036b8  __TI_Handler_Table_Base            
+000036c4  __TI_Handler_Table_Limit           
+000036cc  __TI_CINIT_Base                    
+000036dc  __TI_CINIT_Limit                   
+000036dc  __TI_CINIT_Warm                    
 20200000  USB_DATA                           
 20200000  __start___llvm_prf_bits            
 20200000  __start___llvm_prf_cnts            
@@ -772,4 +781,4 @@ ffffffff  binit
 UNDEFED   __mpu_init                         
 UNDEFED   _system_post_cinit                 
 
-[191 symbols]
+[194 symbols]

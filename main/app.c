@@ -9,6 +9,7 @@ void app_init(void) {
   mux_init_all();
   control_init();
   time_cal_init();
+  reset_i2c();
 }
 
 void cmd_data_setup(void)
@@ -34,7 +35,7 @@ void cmd_data_setup(void)
    usb_cmd_data_setup(&USB_DATA,18,"LED_On_Voltage_2","OK",led_status_voltage_2_site_0);
    usb_cmd_data_setup(&USB_DATA,19,"LED_On_Voltage_3","OK",led_status_voltage_3_site_0);
    usb_cmd_data_setup(&USB_DATA,20,"Power_supply_2.7V_Off","OK",turn_off_all);
-   usb_cmd_data_setup(&USB_DATA,21, "SET_VOLTAGE", NULL, set_voltage_handler);
+   usb_cmd_data_setup(&USB_DATA,21, "SET_VOLTAGE", "OK", set_voltage_handler);
    usb_cmd_data_setup(&USB_DATA,22,"Reset","OK",turn_off_all);
 
 }

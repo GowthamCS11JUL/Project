@@ -1,7 +1,7 @@
 # FIXED
 
 command_function.o: ../command_function.c ../command_function.h \
- ../adc_mux.h ../headers.h \
+ ../adc_mux.h ../control.h ../headers.h \
  ti_msp_dl_config.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/DeviceFamily.h \
@@ -82,9 +82,10 @@ command_function.o: ../command_function.c ../command_function.h \
  ../usb.h ../delay_timer.h \
  C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/I2C_Controller.h \
  C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/SPI_Interface.h \
- ../variables.h ../control.h ../i2c_common.h ../spi.h ../app.h
+ ../variables.h ../i2c_common.h ../spi.h ../app.h
 ../command_function.h:
 ../adc_mux.h:
+../control.h:
 ../headers.h:
 ti_msp_dl_config.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h:
@@ -168,7 +169,6 @@ C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/Timer_Profi
 C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/I2C_Controller.h:
 C:/Users/Gowtham\ CS/Downloads/MSPM0G_Library/MSPM0G_Library/Include/SPI_Interface.h:
 ../variables.h:
-../control.h:
 ../i2c_common.h:
 ../spi.h:
 ../app.h:
