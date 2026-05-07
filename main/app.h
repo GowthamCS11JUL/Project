@@ -3,4 +3,5 @@
 
 void app_init(void);
 void cmd_data_setup(void);
+void time_cal_init(void);
 #endif

@@ -41,6 +41,7 @@
 #include "ti_msp_dl_config.h"
 
 DL_TimerA_backupConfig gTIMER_0Backup;
+DL_TimerG_backupConfig gTIMER_1Backup;
 DL_SPI_backupConfig gSPI_0Backup;
 
 /*
@@ -60,6 +61,7 @@ SYSCONFIG_WEAK void SYSCFG_DL_init(void)
     SYSCFG_DL_SPI_0_init();
     /* Ensure backup structures have no valid state */
 	gTIMER_0Backup.backupRdy 	= false;
+	gTIMER_1Backup.backupRdy 	= false;
 
 	gSPI_0Backup.backupRdy 	= false;
 
@@ -73,6 +75,7 @@ SYSCONFIG_WEAK bool SYSCFG_DL_saveConfiguration(void)
     bool retStatus = true;
 
 	retStatus &= DL_TimerA_saveConfiguration(TIMER_0_INST, &gTIMER_0Backup);
+	retStatus &= DL_TimerG_saveConfiguration(TIMER_1_INST, &gTIMER_1Backup);
 	retStatus &= DL_SPI_saveConfiguration(SPI_0_INST, &gSPI_0Backup);
 
     return retStatus;
@@ -84,6 +87,7 @@ SYSCONFIG_WEAK bool SYSCFG_DL_restoreConfiguration(void)
     bool retStatus = true;
 
 	retStatus &= DL_TimerA_restoreConfiguration(TIMER_0_INST, &gTIMER_0Backup, false);
+	retStatus &= DL_TimerG_restoreConfiguration(TIMER_1_INST, &gTIMER_1Backup, false);
 	retStatus &= DL_SPI_restoreConfiguration(SPI_0_INST, &gSPI_0Backup);
 
     return retStatus;

@@ -1,5 +1,6 @@
 "./adc_mux.o"
 "./app.o"
+"./command_function.o"
 "./control.o"
 "./delay_timer.o"
 "./ti_msp_dl_config.o"

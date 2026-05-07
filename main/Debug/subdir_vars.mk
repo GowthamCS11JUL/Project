@@ -11,6 +11,7 @@ SYSCFG_SRCS += \
 C_SRCS += \
 ../adc_mux.c \
 ../app.c \
+../command_function.c \
 ../control.c \
 ../delay_timer.c \
 ./ti_msp_dl_config.c \
@@ -31,6 +32,7 @@ GEN_FILES += \
 C_DEPS += \
 ./adc_mux.d \
 ./app.d \
+./command_function.d \
 ./control.d \
 ./delay_timer.d \
 ./ti_msp_dl_config.d \
@@ -46,6 +48,7 @@ GEN_OPTS += \
 OBJS += \
 ./adc_mux.o \
 ./app.o \
+./command_function.o \
 ./control.o \
 ./delay_timer.o \
 ./ti_msp_dl_config.o \
@@ -63,6 +66,7 @@ GEN_MISC_FILES += \
 OBJS__QUOTED += \
 "adc_mux.o" \
 "app.o" \
+"command_function.o" \
 "control.o" \
 "delay_timer.o" \
 "ti_msp_dl_config.o" \
@@ -80,6 +84,7 @@ GEN_MISC_FILES__QUOTED += \
 C_DEPS__QUOTED += \
 "adc_mux.d" \
 "app.d" \
+"command_function.d" \
 "control.d" \
 "delay_timer.d" \
 "ti_msp_dl_config.d" \
@@ -97,6 +102,7 @@ GEN_FILES__QUOTED += \
 C_SRCS__QUOTED += \
 "../adc_mux.c" \
 "../app.c" \
+"../command_function.c" \
 "../control.c" \
 "../delay_timer.c" \
 "./ti_msp_dl_config.c" \

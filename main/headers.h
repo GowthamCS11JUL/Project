@@ -19,6 +19,7 @@
 #include "control.h"
 #include "i2c_common.h"
 #include "spi.h"
+#include "command_function.h"
 #include "app.h"
 
 #endif

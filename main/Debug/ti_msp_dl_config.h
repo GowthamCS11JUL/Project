@@ -82,9 +82,9 @@ extern "C" {
 #define TIMER_0_INST_INT_IRQN                                   (TIMA0_INT_IRQn)
 #define TIMER_0_INST_LOAD_VALUE                                             (0U)
 /* Defines for TIMER_1 */
-#define TIMER_1_INST                                                     (TIMG0)
-#define TIMER_1_INST_IRQHandler                                 TIMG0_IRQHandler
-#define TIMER_1_INST_INT_IRQN                                   (TIMG0_INT_IRQn)
+#define TIMER_1_INST                                                     (TIMG7)
+#define TIMER_1_INST_IRQHandler                                 TIMG7_IRQHandler
+#define TIMER_1_INST_INT_IRQN                                   (TIMG7_INT_IRQn)
 #define TIMER_1_INST_LOAD_VALUE                                             (0U)
 
 
@@ -163,9 +163,9 @@ extern "C" {
 /* Port definition for Pin Group Chip_select */
 #define Chip_select_PORT                                                 (GPIOB)
 
-/* Defines for Chip_select_bar_En: GPIOB.16 with pinCMx 33 on package pin 4 */
-#define Chip_select_Chip_select_bar_En_PIN                      (DL_GPIO_PIN_16)
-#define Chip_select_Chip_select_bar_En_IOMUX                     (IOMUX_PINCM33)
+/* Defines for Chip_select_bar_En: GPIOB.20 with pinCMx 48 on package pin 19 */
+#define Chip_select_Chip_select_bar_En_PIN                      (DL_GPIO_PIN_20)
+#define Chip_select_Chip_select_bar_En_IOMUX                     (IOMUX_PINCM48)
 /* Port definition for Pin Group ADC_MUX_EN */
 #define ADC_MUX_EN_PORT                                                  (GPIOA)
 
